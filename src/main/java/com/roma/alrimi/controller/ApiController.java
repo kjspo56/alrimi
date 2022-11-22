@@ -18,10 +18,11 @@ public class ApiController {
 
     @GetMapping("allow_info/basic")
     public String allowBasic(){
+
         StringBuffer result = new StringBuffer();
         try {
-            StringBuilder urlBuilder = new StringBuilder("http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-2271&srvType=A&serviceKind=1&currentPageNo=1"); //url
-            urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=발급받은 서비스키"); //Service Key
+            StringBuilder urlBuilder = new StringBuilder("http://openAPI.seoul.go.kr:8088/"+"인증키"+"/json/YSListPublicReservationSport/1/5/"); //url
+            urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "인증키"); //Service Key
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); //페이지 번호
             urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); //한 페이지 결과수
             urlBuilder.append("&type=json"); //결과 json 포맷
